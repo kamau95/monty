@@ -1,30 +1,32 @@
 #include "monty.h"
 /**
-* runExecution - executes the opcode
-* @stack: head linked list - stack
+* execute - Executes the opcode stored in the content parameter
+* @stack: A pointer to the head of a linked list that represents the stack
 * @counter: line_counter
 * @file: poiner to monty file
 * @content: line content
-* Return: nothing
+* Return: The function may print an error message
+* and exit if the opcode is invalid or 
+* the argument is missing or wrong.
 */
-int runExecution(char *content, stack_t **stack, unsigned int counter, FILE *file)
+int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 {
 	instruction_t opst[] = {
-				{"push", func_push}, {"pall", func_pall}, {"pint", func_pint},
-				{"pop", func_pop},
-				{"swap", func_swap},
-				{"add", func_add},
-				{"nop", func_nop},
-				{"sub", func_sub},
-				{"div", func_div},
-				{"mul", func_mul},
-				{"mod", func_mod},
-				{"pchar", func_pchar},
-				{"pstr", func_pstr},
-				{"rotl", func_rotl},
-				{"rotr", func_rotr},
-				{"queue", func_queue},
-				{"stack", func_stack},
+				{"push", f_push}, {"pall", f_pall}, {"pint", f_pint},
+				{"pop", f_pop},
+				{"swap", f_swap},
+				{"add", f_add},
+				{"nop", f_nop},
+				{"sub", f_sub},
+				{"div", f_div},
+				{"mul", f_mul},
+				{"mod", f_mod},
+				{"pchar", f_pchar},
+				{"pstr", f_pstr},
+				{"rotl", f_rotl},
+				{"rotr", f_rotr},
+				{"queue", f_queue},
+				{"stack", f_stack},
 				{NULL, NULL}
 				};
 	unsigned int i = 0;
@@ -46,7 +48,7 @@ int runExecution(char *content, stack_t **stack, unsigned int counter, FILE *fil
 	{ fprintf(stderr, "L%d: unknown instruction %s\n", counter, op);
 		fclose(file);
 		free(content);
-		clear_stack(*stack);
+		free_stack(*stack);
 		exit(EXIT_FAILURE); }
 	return (1);
 }

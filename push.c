@@ -1,11 +1,11 @@
 #include "monty.h"
 /**
- * func_push - add node to the stack
+ * f_push - add nnother new node to the stack
  * @head: stack head
  * @counter: line_number
- * Return: no return
+ * Return: null
 */
-void func_push(stack_t **head, unsigned int counter)
+void f_push(stack_t **head, unsigned int counter)
 {
 	int n, j = 0, flag = 0;
 
@@ -21,17 +21,17 @@ void func_push(stack_t **head, unsigned int counter)
 		{ fprintf(stderr, "L%d: usage: push integer\n", counter);
 			fclose(bus.file);
 			free(bus.content);
-			clear_stack(*head);
+			free_stack(*head);
 			exit(EXIT_FAILURE); }}
 	else
 	{ fprintf(stderr, "L%d: usage: push integer\n", counter);
 		fclose(bus.file);
 		free(bus.content);
-		clear_stack(*head);
+		free_stack(*head);
 		exit(EXIT_FAILURE); }
 	n = atoi(bus.arg);
 	if (bus.lifi == 0)
-		createNode(head, n);
+		addnode(head, n);
 	else
-		createQueue(head, n);
+		addqueue(head, n);
 }

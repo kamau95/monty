@@ -1,11 +1,13 @@
 #include "monty.h"
 /**
- * func_pall - outputs the stack
+ * f_pall - Prints the values on the stack,
+ * starting from the top
  * @head: stack head
  * @counter: no used
- * Return: nothing to return
+ * Return: Nothing. The function may print
+ * an error message and exit if the stack is empty.
 */
-void func_pall(stack_t **head, unsigned int counter)
+void f_pall(stack_t **head, unsigned int counter)
 {
 	stack_t *h;
 	(void)counter;

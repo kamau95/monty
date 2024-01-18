@@ -1,9 +1,9 @@
 #include "monty.h"
 /**
-* clear_stack - deletes contents of a doubly linked list
-* @head: head of the stack or queue
+* free_stack - clear a doubly linked list
+* @head: head of the stack
 */
-void clear_stack(stack_t *head)
+void free_stack(stack_t *head)
 {
 	stack_t *aux;
 

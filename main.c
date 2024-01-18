@@ -1,9 +1,10 @@
 #include "monty.h"
 bus_t bus = {NULL, NULL, NULL, 0};
 /**
-* main - code interpreter
+* main - monty code interpreter
 * @argc: number of arguments
-* @argv: monty file location
+* @argv: An array of strings containing
+* the arguments, including the monty file location.
 * Return: 0 on success
 */
 int main(int argc, char *argv[])
@@ -35,11 +36,11 @@ int main(int argc, char *argv[])
 		counter++;
 		if (read_line > 0)
 		{
-			runExecution(content, &stack, counter, file);
+			execute(content, &stack, counter, file);
 		}
 		free(content);
 	}
-	clear_stack(stack);
+	free_stack(stack);
 	fclose(file);
 return (0);
 }
