@@ -1,8 +1,8 @@
 #include "monty.h"
 /**
- * f_add - Adds the top two elements of
- * the stack and replaces them with the sum.
- * @head: stack head
+ * f_add - Adds the top two elements of the stack
+ *         and replaces them with the sum.
+ * @head: pointer to the stack head
  * @counter: line_number
  * Return: No return value.
 */
