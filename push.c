@@ -31,7 +31,7 @@ void func_push(stack_t **head, unsigned int counter)
 		exit(EXIT_FAILURE); }
 	n = atoi(bus.arg);
 	if (bus.lifi == 0)
-		createNodeode(head, n);
+		createNode(head, n);
 	else
 		createQueue(head, n);
 }
